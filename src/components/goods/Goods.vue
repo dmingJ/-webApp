@@ -2,7 +2,8 @@
 <div class="goods">
     <div class="meun-wrapper" ref="meunWrapper">
         <ul>
-            <li v-for="(item,index) in goods" :key="index" class="meun-li" :class="{'current':currentIndex===index}">
+            <li v-for="(item,index) in goods" :key="index" class="meun-li" 
+            :class="{'current':currentIndex===index}" @click="selectMenu(index,$event)">
                 <span class="text">{{item.name}}</span>
             </li>
         </ul>
@@ -23,24 +24,36 @@
                                 <span class="food-sell">月售{{food.sellCount}}份</span>
                                 <span>好评率{{food.sellCount}}</span>
                             </div>
-                            <div>
+                            <div class="food-price">
                                 <span class="now-price">￥{{food.price}}</span>
                                 <span v-show="food.oldPrice" class="old-price">￥{{food.oldPrice}}</span>
+                                <div class="cartcontrol-wrapper">
+                                <cartcontrol :food="food"></cartcontrol>
                             </div>
+                            </div>
+                            
                         </div>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
+    <shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice"
+     :min-price="seller.minPrice"></shopcart>
  </div>   
 </template>
 <script>
 import BScroll from 'better-scroll'
+import shopcart from '../shopcart/shopcart'
+import cartcontrol from "../cartcontrol/cartcontrol"
 
 export default {
+    components:{
+        shopcart,
+        cartcontrol
+    },
     props: {
-        seller:{
+        seller: {
             type:Object
         }
     },
@@ -48,7 +61,7 @@ export default {
         return{
             goods:[],
             listHeight:[],
-            scrollY:0
+            scrollY:0,
         }
     },
     computed: {
@@ -61,11 +74,23 @@ export default {
                 }
             }
             return 0;
+        },
+        selectFoods() {
+            let foods = [];
+            this.goods.forEach((good) => {
+                good.foods.forEach((food) => {
+                    if(food.count) {
+                        foods.push(food);
+                    }
+                })
+            })
+            return foods;
         }
     },
     created() {
     this.axios.get('http://192.168.1.105:8080/data.json').then((res) => {
      this.goods = res.data.goods;
+     this.seller = res.data.seller;
      this.$nextTick(()=>{
           this._initScroll();
           this._calculateHeight();
@@ -73,10 +98,21 @@ export default {
    })
     },
     methods: {
+        selectMenu(index,event){
+            if(!event._constructed){
+                return;
+            }
+            let foodList = this.$refs.foodWrapper.getElementsByClassName('food-list-hook');
+            let el = foodList[index];
+            this.foodScroll.scrollToElement(el,300);
+        },
         _initScroll() {
-            this.menuScroll = new BScroll(this.$refs.meunWrapper,{});
+            this.menuScroll = new BScroll(this.$refs.meunWrapper,{
+                click: true
+            });
             this.foodScroll = new BScroll(this.$refs.foodWrapper,{
-                probeType:3
+                probeType:3,
+                click: true
             });
             this.foodScroll.on('scroll',(pos) => {
                 this.scrollY = Math.abs(Math.round(pos.y))
@@ -192,6 +228,14 @@ export default {
     color: rgb(147,153,159);
     line-height: 24px;
     text-decoration: line-through;
+}
+.food-price{
+    position: relative;
+}
+.cartcontrol-wrapper{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 </style>
 

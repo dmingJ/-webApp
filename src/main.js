@@ -7,6 +7,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import qs from 'qs'
 import cssLoader from 'css-loader'
+import './fonts/sell-icon.css'
 
 Vue.prototype.$axios = axios
 Vue.prototype.qs = qs
@@ -14,9 +15,9 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  axios,
-  cssLoader,
-  render: h => h(App)
+    router,
+    store,
+    axios,
+    cssLoader,
+    render: h => h(App)
 }).$mount('#app')

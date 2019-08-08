@@ -31,7 +31,7 @@ export default new Vuex.Store({
       if (localStorage.getItem('users')) {
         state.users = JSON.parse(localStorage.getItem('users'))
       }
-    } 
+    }
   },
   getters: {
     myLists: state => {

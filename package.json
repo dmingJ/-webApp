@@ -1,5 +1,5 @@
 {
-  "name": "shopapp",
+  "name": "sellapp",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -32,6 +32,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylus-loader": "^3.0.2",
+    "stylus": "0.54.5",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -43,7 +44,12 @@
       "plugin:vue/essential",
       "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+      "indent": [
+        1,
+        4
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
@@ -56,5 +62,20 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmingJ/-webApp.git"
+  },
+  "keywords": [
+    "jymyt20080540."
+  ],
+  "author": "jdm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmingJ/-webApp/issues"
+  },
+  "homepage": "https://github.com/dmingJ/-webApp#readme"
 }

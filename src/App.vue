@@ -14,13 +14,15 @@
     </div>
     <transition>
       <keep-alive>
-        <router-view></router-view>
+        <router-view :seller="seller"></router-view>
       </keep-alive>
     </transition>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
+// eslint-disable-next-line
 import header from "./views/header/header";
 import tab from "./views/tab";
 import content from "./views/content";
@@ -50,6 +52,7 @@ export default {
 
 
 <style lang="scss">
+
 body{
   text-decoration: none;
   margin: 0;

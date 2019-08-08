@@ -19,14 +19,14 @@
       </div>
       <div v-if="seller.supports" class="support-count" @click="Show">
         <span class="count">{{seller.supports.length}}个</span>
-        <i class="i-icon">></i>
+        <i class="i-icon icon-keyboard_arrow_right"></i>
       </div>
     </div>
     <div class="buttom-wraper" @click="Show">
       <span class="roal"></span>
       <span class="bulletin">
         {{seller.bulletin}}
-        <i class="i-icon i-info">></i>
+        <i class="i-icon i-info ">></i>
       </span>
     </div>
     <div class="detail" v-show="detailShow">
@@ -53,7 +53,7 @@
         <div class="roal-text"><p>{{seller.bulletin}}</p></div>
         </div>
        
-      </div> <div class="close" @click="Close">×</div>
+      </div> <div class="close" @click="Close"> <i class="icon-close"></i></div>
     </div>
   </div>
 </template>
