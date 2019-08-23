@@ -15,7 +15,6 @@ export default {
 </script>
 <style>
 .star{
-    width: 50%;
     height: 12px;
     margin: 32px auto;
 }

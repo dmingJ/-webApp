@@ -21,8 +21,6 @@
 </template>
 
 <script>
-/* eslint-disable */
-// eslint-disable-next-line
 import header from "./views/header/header";
 import tab from "./views/tab";
 import content from "./views/content";
