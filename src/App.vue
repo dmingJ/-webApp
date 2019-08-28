@@ -42,6 +42,7 @@ export default {
  created(){
    this.axios.get('http://192.168.1.105:8080/data.json').then((res) => {
      this.seller = res.data.seller
+     this.ratings = res.data.ratings
    })
    }
 };

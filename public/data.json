@@ -1149,7 +1149,7 @@
     {
       "username": "2******3",
       "rateTime": 1469271264000,
-      "deliveryTime": "",
+      "deliveryTime": 22,
       "score": 4,
       "rateType": 0,
       "text": "服务态度不错",
@@ -1210,7 +1210,7 @@
     {
       "username": "2******3",
       "rateTime": 1469221264000,
-      "deliveryTime": "",
+      "deliveryTime": 45,
       "score": 4,
       "rateType": 0,
       "text": "量给的还可以",
@@ -1220,7 +1220,7 @@
     {
       "username": "3******8",
       "rateTime": 1469211964000,
-      "deliveryTime": "",
+      "deliveryTime": 43,
       "score": 3,
       "rateType": 1,
       "text": "",
@@ -1230,7 +1230,7 @@
     {
       "username": "a******a",
       "rateTime": 1469201964000,
-      "deliveryTime": "",
+      "deliveryTime": 58,
       "score": 4,
       "rateType": 0,
       "text": "孩子喜欢吃这家",
@@ -1242,7 +1242,7 @@
     {
       "username": "3******3",
       "rateTime": 1469191264000,
-      "deliveryTime": "",
+      "deliveryTime": 39,
       "score": 4,
       "rateType": 0,
       "text": "粥挺好吃的",
@@ -1252,7 +1252,7 @@
     {
       "username": "t******b",
       "rateTime": 1469181964000,
-      "deliveryTime": "",
+      "deliveryTime": 29,
       "score": 3,
       "rateType": 1,
       "text": "",
